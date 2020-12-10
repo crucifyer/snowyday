@@ -1,0 +1,45 @@
+@keyframes snowflakeRemove {
+	from {
+		opacity:1;
+	}
+	to {
+		opacity:0;
+	}
+}
+.snowflakeRemove {
+	animation: snowflakeRemove 3s linear;
+}
+@keyframes snowflakeRotateRight {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes snowflakeRotateLeft {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-360deg);
+	}
+}
+.snowflakeRotate0 {
+	animation: snowflakeRotateRight 1s linear infinite;
+}
+.snowflakeRotate1 {
+	animation: snowflakeRotateRight 2s linear infinite;
+}
+.snowflakeRotate2 {
+	animation: snowflakeRotateRight 3s linear infinite;
+}
+.snowflakeRotate3 {
+	animation: snowflakeRotateLeft 1s linear infinite;
+}
+.snowflakeRotate4 {
+	animation: snowflakeRotateLeft 2s linear infinite;
+}
+.snowflakeRotate5 {
+	animation: snowflakeRotateLeft 3s linear infinite;
+}
