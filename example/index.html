@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>화면에 눈 내리는 js 코드</title>
+	<style>
+		pre {tab-size: 4;}
+		code,pre { font-family: 'Nanum Gothic Coding', monospace; }
+		body {
+			background:black;
+			color:white;
+		}
+		@keyframes snowflakeRemove {
+			from {
+				opacity:1;
+			}
+			to {
+				opacity:0;
+			}
+		}
+		.snowflakeRemove {
+			animation: snowflakeRemove 3s linear;
+		}
+		@keyframes snowflakeRotateRight {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
+		@keyframes snowflakeRotateLeft {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(-360deg);
+			}
+		}
+		.snowflakeRotate0 {
+			animation: snowflakeRotateRight 1s linear infinite;
+		}
+		.snowflakeRotate1 {
+			animation: snowflakeRotateRight 2s linear infinite;
+		}
+		.snowflakeRotate2 {
+			animation: snowflakeRotateRight 3s linear infinite;
+		}
+		.snowflakeRotate3 {
+			animation: snowflakeRotateLeft 1s linear infinite;
+		}
+		.snowflakeRotate4 {
+			animation: snowflakeRotateLeft 2s linear infinite;
+		}
+		.snowflakeRotate5 {
+			animation: snowflakeRotateLeft 3s linear infinite;
+		}
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/darcula.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha384-6vvCODRJF+okTrg66oadkEnTCYDmXIc3d6D564SxOHBnRLhzDE+iAMqUg3FnhzPH" crossorigin="anonymous"></script>
+</head>
+<body>
+<pre><code></code></pre>
+<script src="../snowyday.js"></script>
+<script>
+	setTimeout(function() {
+		document.getElementsByTagName('code')[0].innerHTML = hljs.highlight('html', document.documentElement.outerHTML).value;
+	}, 1000);
+
+	XenoSnowyDay(function() {
+		return "<div class='snowflakeRotate" + Math.floor(Math.random() * 6) + "' style='font-size:" + (Math.random() * 30 + 7) + "px;'>\u2744\uFE0F</div>"; // img tag, <div style="color:~~~">*</div> ~~~ must tag.
+	}, function() {
+		return Math.ceil(Math.random() * 2000 + 500);
+	}, function() {
+		return Math.random() * 100 + 10;
+	}, 100); // snowflake object callback, snowflake make timing callback, animation interval callback, max objects
+</script>
+</body>
+</html>
